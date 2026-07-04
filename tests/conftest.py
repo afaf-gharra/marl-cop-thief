@@ -8,7 +8,6 @@ from copthief.shared.config import GameConfig, ScoringConfig
 def scoring() -> ScoringConfig:
     return ScoringConfig(cop_win=20, thief_win=10, cop_loss=5, thief_loss=5)
 
-
 @pytest.fixture
 def small_config(scoring) -> GameConfig:
     return GameConfig(
