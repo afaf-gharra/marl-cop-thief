@@ -83,6 +83,16 @@ Score -> cop: 20, thief: 5
 `results/final_positions.png` plots each sub-game's final cop (blue square)
 and thief (red circle) position on the grid.
 
+**Real-time GUI**: `uv run python -m copthief.main` also renders one
+animated GIF per sub-game (`results/sub_game_<n>.gif`) via
+`src/copthief/gui/animation.py`, showing the cop (blue square), thief (red
+circle), and every barrier (black X) turn-by-turn as the game unfolds. A
+committed sample is at [`assets/demo_sub_game.gif`](assets/demo_sub_game.gif)
+(and [`assets/demo_game_report.json`](assets/demo_game_report.json) is the
+matching report) so graders can see a full playback without running the
+code. On a machine with a display, `copthief.gui.animation.render_live_window(...)`
+additionally opens an interactive matplotlib window instead of saving a file.
+
 ## Configuration guide
 
 See `config/config.json` (`grid_size`, `max_moves`, `num_games`,
@@ -107,13 +117,19 @@ NumPy, and Matplotlib. Course: bonus exercise ex06, Dr. Yoram Segal.
 
 ## Known limitations (honest self-assessment)
 
-- **Cloud deployment** (Prefect Cloud / ngrok / ngrok-style tunneling) is
-  documented in `docs/PLAN.md` but not actually deployed — it requires the
-  student's own cloud accounts, out of scope for this sandboxed build.
+- **Cloud deployment** (Prefect Cloud / ngrok / AWS) is fully documented in
+  `docs/PLAN.md` and, unusually, was technically *possible* to execute for
+  real (valid AWS credentials were available in the build environment) —
+  but deploying would create real, billable, public-facing infrastructure
+  on the student's AWS account, so this was deliberately left
+  documented-only by the student's explicit choice rather than executed.
 - **Gmail sending** (`src/copthief/reporting/gmail_sender.py`) implements
-  the full OAuth + send flow and is unit-tested with a mocked API client,
-  but was never executed against a real Google account — see
-  `docs/PRD_gmail_reporting.md` for the one-time setup a user must run.
+  the full OAuth + send flow and is unit-tested with a mocked API client.
+  A ready-to-send draft is built by `copthief.reporting.draft_email` at
+  `results/draft_email.eml`, but actually calling the Gmail API needs the
+  student's own Google OAuth consent (a one-time interactive step Google
+  requires from the account owner), so — again by explicit choice — the
+  draft was intentionally never sent. See `docs/PRD_gmail_reporting.md`.
 - **Inter-group bonus race** (§12 of the exercise) needs a second team's
   MCP URLs, which don't exist for a solo submission; the JSON schema is
   supported (`report_type: "bonus_game"`) but no real cross-group match was

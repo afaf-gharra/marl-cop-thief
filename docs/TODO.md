@@ -29,19 +29,29 @@
 ## Phase 6 — Reporting & GUI (done)
 - [x] `reporting/json_report.py` — `internal_game_report` builder.
 - [x] `reporting/gmail_sender.py` — OAuth send (documented, mocked in tests).
-- [x] `gui/console_view.py` — ASCII transcript + matplotlib plot.
+- [x] `gui/console_view.py` — ASCII transcript + static matplotlib plot.
+- [x] `gui/animation.py` — real-time-style per-sub-game animated GIF
+      (`render_sub_game_gif`) plus a best-effort live window
+      (`render_live_window`) for machines with a display.
 
-## Phase 7 — Quality gates (in progress)
+## Phase 7 — Quality gates (done)
 - [x] Unit tests per module + graduated sanity checks (2x2 → 5x5).
-- [x] `uv run pytest --cov` — 50 tests, 93% coverage (≥85% gate passed).
+- [x] `uv run pytest --cov` — 52 tests, 93% coverage (≥85% gate passed).
 - [x] `uv run ruff check .` — zero violations.
 - [x] Pushed to `https://github.com/afaf-gharra/marl-cop-thief` (public).
 - [x] Drafted (not sent) the `game_report.json` submission email — see
       `results/draft_email.eml`, built by
-      `scripts/build_draft_email.py` without touching the Gmail API.
+      `copthief.reporting.draft_email` without touching the Gmail API.
 
-## Phase 8 — Left to the student (out of this session's scope)
-- [ ] Real Prefect Cloud / ngrok deployment of both MCP servers.
-- [ ] Real Gmail OAuth consent + actually sending
-      `results/draft_email.eml` via `gmail_sender.send_report(...)`.
+## Phase 8 — Deliberately not executed (explicit student decision)
+- [ ] Real cloud deployment of both MCP servers. Valid AWS credentials were
+      available in the build environment (verified with
+      `aws sts get-caller-identity`), so this was technically possible, but
+      the student chose to keep it documented-only (`docs/PLAN.md`) rather
+      than create real, billable, public-facing AWS resources.
+- [ ] Real Gmail OAuth consent + actually sending `results/draft_email.eml`
+      via `gmail_sender.send_report(...)`. This requires the student to
+      create their own Google Cloud OAuth client and approve a one-time
+      device-code consent; the student chose to keep the email as a
+      reviewable draft instead.
 - [ ] Bonus inter-group race, if a partner team is found.

@@ -2,6 +2,7 @@
 
 Usage: uv run python -m copthief.main
 """
+from copthief.gui.animation import render_sub_game_gif
 from copthief.gui.console_view import render_ascii_summary, save_final_positions_plot
 from copthief.reporting.json_report import build_internal_game_report, write_report
 from copthief.sdk.sdk import CopThiefSdk
@@ -14,7 +15,8 @@ def main() -> None:
 
     for index, sub_game in enumerate(result.sub_games, start=1):
         print(render_ascii_summary(sub_game, index))
-        print()
+        gif_path = render_sub_game_gif(sub_game, sdk.config.grid_size, f"results/sub_game_{index}.gif")
+        print(f"  (animated playback: {gif_path})\n")
 
     print(f"TOTALS -> cop: {result.cop_total}, thief: {result.thief_total}")
 
@@ -28,7 +30,7 @@ def main() -> None:
     )
     write_report(report, "results/game_report.json")
     save_final_positions_plot(result.sub_games, sdk.config.grid_size, "results/final_positions.png")
-    print("Wrote results/game_report.json and results/final_positions.png")
+    print("Wrote results/game_report.json, results/final_positions.png, and per-game GIFs")
 
 
 if __name__ == "__main__":

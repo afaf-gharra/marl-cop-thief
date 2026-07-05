@@ -34,6 +34,7 @@ def build_internal_game_report(
                         "message": turn.message,
                         "action": turn.action,
                         "position_after": turn.position_after,
+                        "barrier_placed": turn.barrier_placed,
                     }
                     for turn in sub_game.turns
                 ],

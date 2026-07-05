@@ -18,6 +18,7 @@ class TurnRecord:
     message: str
     action: str
     position_after: list[int]
+    barrier_placed: list[int] | None = None
 
 
 @dataclass
@@ -80,11 +81,18 @@ async def run_sub_game(
 
             message, action = await _take_turn(client, role, state, last_message)
             barrier_target = _pick_barrier_target(state, rng) if action == Action.PLACE_BARRIER else None
-            rules.apply_action(state, role, action, barrier_target)
+            applied = rules.apply_action(state, role, action, barrier_target)
+            barrier_placed = list(barrier_target) if (applied and barrier_target is not None) else None
 
             position = state.thief_pos if role == Role.THIEF else state.cop_pos
             record.turns.append(
-                TurnRecord(role=role.value, message=message, action=action.value, position_after=list(position))
+                TurnRecord(
+                    role=role.value,
+                    message=message,
+                    action=action.value,
+                    position_after=list(position),
+                    barrier_placed=barrier_placed,
+                )
             )
             last_message = message
             state.turn_count += 1

@@ -20,6 +20,7 @@ venv/
 results/*.json
 results/*.png
 results/*.eml
+results/*.gif
 
 .vscode/
 .idea/
