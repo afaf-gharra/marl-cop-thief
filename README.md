@@ -1,5 +1,7 @@
 # Cop/Thief — Dual AI Agent Race via MCP Servers
 
+[![CI](https://github.com/afaf-gharra/marl-cop-thief/actions/workflows/ci.yml/badge.svg)](https://github.com/afaf-gharra/marl-cop-thief/actions/workflows/ci.yml)
+
 Ex06 (bonus), team code **SMNGRP05** — Afaf Gharra (ID 208123232) &
 Reem Awawdy (ID 212018899).
 
@@ -235,10 +237,13 @@ group deleted) — see the deployment record in `docs/PLAN.md`.
 ## Known limitations (honest self-assessment)
 
 - **Inter-group bonus race** (§12 of the exercise) needs a *second group's*
-  MCP URLs, which weren't available (no partner team paired with us); the
-  JSON schema and builder are implemented (`build_bonus_game_report`,
-  `report_type: "bonus_game"`) and unit-tested, but no real cross-group
-  match was played.
+  MCP URLs, which weren't available (no partner team paired with us). The
+  full bonus pipeline is implemented and exercised as a **self-play
+  demonstration** (`uv run python -m copthief.reporting.bonus_demo` → the
+  3+3 role split, producing a spec-compliant §9.2 `bonus_game` report at
+  [`assets/demo_bonus_game_report.json`](assets/demo_bonus_game_report.json)).
+  This proves the code path end-to-end; it is honestly a self-play run, not a
+  genuine cross-group match against a different team's code.
 - **Q-learning ceiling**: because the state deliberately excludes the
   opponent's cell (true partial observability), the tabular Q-table learns
   positional priors rather than direct pursuit tactics — the cop's win rate

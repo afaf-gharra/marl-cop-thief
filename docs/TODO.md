@@ -55,7 +55,15 @@
       report only, per spec. Message id `19f36657f46ff3b8`; a corrected
       copy listing both group members was re-sent as `19f367b99e422d4f`.
 
+## Phase 9 — Final polish
+- [x] **CI/CD** — GitHub Actions (`.github/workflows/ci.yml`) runs ruff +
+      pytest/coverage on every push (badge in README).
+- [x] **Inter-group bonus pipeline** exercised as a self-play demonstration
+      (`copthief.reporting.bonus_demo`) producing a §9.2 `bonus_game` report
+      (`assets/demo_bonus_game_report.json`) + unit test.
+
 ## Out of scope
-- [ ] Bonus inter-group race — needs a partner team; schema + builder ready
-      (`build_bonus_game_report`), no live cross-group match played.
-- [ ] Moodle submission PDF (`SMNGRP05-ex06.pdf`) — no Word template available.
+- [ ] Bonus inter-group race against a *real* second team — none paired with
+      us; the pipeline is proven via self-play (above), not a genuine
+      cross-group match.
+- [ ] Moodle submission PDF (`SMNGRP05-ex06.pdf`) — handled by the students.
