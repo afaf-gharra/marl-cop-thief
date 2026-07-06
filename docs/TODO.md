@@ -49,9 +49,10 @@
       `assets/cloud_run_log.txt`, `assets/cloud_auth_proof.txt`,
       `assets/demo_cloud_game_report.json`; record in `docs/PLAN.md`.
 - [x] **Research notebook** with executed outputs + figures (`assets/*.png`).
-- [ ] **Gmail send** — OAuth consent completed by the account owner, then
-      `uv run python -m copthief.reporting.send_report` emails the cloud-run
-      report to `rmisegal+uoh26b@gmail.com` (final manual step).
+- [x] **Gmail send** — OAuth consent completed; the cloud-run report was
+      emailed to `rmisegal+uoh26b@gmail.com` via the Gmail API
+      (`uv run python -m copthief.reporting.send_report`, message id
+      `19f36657f46ff3b8`). Body is the JSON report only, per spec.
 
 ## Out of scope
 - [ ] Bonus inter-group race — needs a partner team; schema + builder ready
