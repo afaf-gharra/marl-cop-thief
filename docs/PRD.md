@@ -50,8 +50,8 @@ MCP/Q-learning pattern.
 
 ## Assumptions, dependencies, limitations
 
-- Assumes a single student/group (no second team for the inter-group bonus
-  match — schema supported, not exercised).
+- Two-student group (SMNGRP05); no partner *group* was paired for the
+  inter-group bonus match — schema supported, not exercised.
 - Depends on `fastmcp`, `numpy`, `matplotlib`, `anthropic`,
   `google-api-python-client` (see `pyproject.toml`).
 - Limitation: cloud deployment and Gmail sending are implemented and
@@ -70,7 +70,7 @@ MCP/Q-learning pattern.
 ```json
 {
   "group_name": "SMNGRP05",
-  "students": ["afaf gharra (208123232)"],
+  "students": ["Afaf Gharra (208123232)", "Reem Awawdy (212018899)"],
   "github_repo": "https://github.com/afaf-gharra/marl-cop-thief",
   "cop_mcp_url": "http://127.0.0.1:8801",
   "thief_mcp_url": "http://127.0.0.1:8802",

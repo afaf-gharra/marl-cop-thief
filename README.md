@@ -1,6 +1,7 @@
 # Cop/Thief — Dual AI Agent Race via MCP Servers
 
-Ex06 (bonus), team code **SMNGRP05** — afaf gharra (ID 208123232).
+Ex06 (bonus), team code **SMNGRP05** — Afaf Gharra (ID 208123232) &
+Reem Awawdy (ID 212018899).
 
 Two independent AI agents — a **Cop** and a **Thief** — hunt/evade each other
 on a grid. Each agent is backed by its own **FastMCP server** and can only
@@ -233,10 +234,11 @@ group deleted) — see the deployment record in `docs/PLAN.md`.
 
 ## Known limitations (honest self-assessment)
 
-- **Inter-group bonus race** (§12 of the exercise) needs a second team's
-  MCP URLs, which don't exist for a solo submission; the JSON schema and
-  builder are implemented (`build_bonus_game_report`, `report_type:
-  "bonus_game"`) and unit-tested, but no real cross-group match was played.
+- **Inter-group bonus race** (§12 of the exercise) needs a *second group's*
+  MCP URLs, which weren't available (no partner team paired with us); the
+  JSON schema and builder are implemented (`build_bonus_game_report`,
+  `report_type: "bonus_game"`) and unit-tested, but no real cross-group
+  match was played.
 - **Q-learning ceiling**: because the state deliberately excludes the
   opponent's cell (true partial observability), the tabular Q-table learns
   positional priors rather than direct pursuit tactics — the cop's win rate

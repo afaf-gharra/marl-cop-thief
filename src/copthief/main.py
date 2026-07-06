@@ -52,7 +52,7 @@ def main() -> None:
         github_repo="https://github.com/afaf-gharra/marl-cop-thief",
         cop_mcp_url=cop_url,
         thief_mcp_url=thief_url,
-        students=["afaf gharra (208123232)"],
+        students=["Afaf Gharra (208123232)", "Reem Awawdy (212018899)"],
     )
     write_report(report, "results/game_report.json")
     save_final_positions_plot(result.sub_games, sdk.config.grid_size, "results/final_positions.png")
