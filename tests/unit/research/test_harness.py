@@ -25,3 +25,14 @@ def test_new_agents_have_independent_zeroed_qtables(small_config):
     assert cop is not thief
     assert (cop._q_agent.q_table == 0).all()
     assert (thief._q_agent.q_table == 0).all()
+
+
+def test_qtables_actually_update_during_play(small_config):
+    """The Q-learning must genuinely learn during gameplay, not stay at zero."""
+    import random
+
+    cop, thief = new_agents(small_config)
+    for _ in range(5):
+        run_series(cop, thief, small_config, random.Random(0))
+    # After several series, at least one agent's Q-table must have moved off zero.
+    assert (cop._q_agent.q_table != 0).any() or (thief._q_agent.q_table != 0).any()

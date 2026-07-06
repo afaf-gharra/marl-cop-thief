@@ -4,6 +4,7 @@ from dataclasses import dataclass, field
 
 from fastmcp import Client
 
+from copthief.agents.rewards import step_reward
 from copthief.game import rules
 from copthief.game.grid import Grid
 from copthief.game.scoring import SubGameScore, score_sub_game
@@ -59,6 +60,18 @@ async def _take_turn(client: Client, role: Role, state: GameState, incoming_mess
     return data["message"], Action(data["action"])
 
 
+async def _report_outcome(client: Client, role: Role, state: GameState, captured: bool) -> None:
+    """Feed the step reward back to the agent so its Q-table updates during real play."""
+    await client.call_tool(
+        "report_outcome",
+        {
+            "reward": step_reward(role, captured),
+            "next_partial_view": state.partial_view(role),
+            "done": captured,
+        },
+    )
+
+
 async def run_sub_game(
     cop_client: Client,
     thief_client: Client,
@@ -79,6 +92,11 @@ async def run_sub_game(
             role = state.current_turn
             client = thief_client if role == Role.THIEF else cop_client
 
+            if not rules.legal_actions(state, role):  # boxed in — pass this turn
+                state.turn_count += 1
+                state.current_turn = Role.COP if role == Role.THIEF else Role.THIEF
+                continue
+
             message, action = await _take_turn(client, role, state, last_message)
             barrier_target = _pick_barrier_target(state, rng) if action == Action.PLACE_BARRIER else None
             applied = rules.apply_action(state, role, action, barrier_target)
@@ -98,7 +116,9 @@ async def run_sub_game(
             state.turn_count += 1
             state.current_turn = Role.COP if role == Role.THIEF else Role.THIEF
 
-            if rules.check_capture(state) == Outcome.COP_WINS:
+            captured = rules.check_capture(state) == Outcome.COP_WINS
+            await _report_outcome(client, role, state, captured)
+            if captured:
                 record.outcome = Outcome.COP_WINS.value
                 break
         else:

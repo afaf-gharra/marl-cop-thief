@@ -9,6 +9,7 @@ import random
 
 from copthief.agents.base_agent import Agent
 from copthief.agents.q_learning import QLearningAgent
+from copthief.agents.rewards import step_reward
 from copthief.game import rules
 from copthief.game.grid import Grid
 from copthief.game.scoring import score_sub_game
@@ -43,13 +44,20 @@ def _play_sub_game(cop: Agent, thief: Agent, config: GameConfig, rng: random.Ran
         role = state.current_turn
         agent = thief if role == Role.THIEF else cop
         legal = rules.legal_actions(state, role)
+        if not legal:  # fully boxed in — the player passes (stays put) this turn
+            state.turn_count += 1
+            state.current_turn = Role.COP if role == Role.THIEF else Role.THIEF
+            continue
         _, action = agent.decide(state.partial_view(role), last_message, legal)
         barrier = _pick_barrier(state, rng) if action == Action.PLACE_BARRIER else None
         rules.apply_action(state, role, action, barrier)
         last_message = f"{role.value} moved {action.value}"
         state.turn_count += 1
         state.current_turn = Role.COP if role == Role.THIEF else Role.THIEF
-        if rules.check_capture(state) == Outcome.COP_WINS:
+
+        captured = rules.check_capture(state) == Outcome.COP_WINS
+        agent.learn(step_reward(role, captured), state.partial_view(role), done=captured)
+        if captured:
             return Outcome.COP_WINS.value, state.turn_count
     return Outcome.THIEF_WINS.value, state.turn_count
 

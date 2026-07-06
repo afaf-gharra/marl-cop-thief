@@ -244,8 +244,12 @@ group deleted) — see the deployment record in `docs/PLAN.md`.
   [`assets/demo_bonus_game_report.json`](assets/demo_bonus_game_report.json)).
   This proves the code path end-to-end; it is honestly a self-play run, not a
   genuine cross-group match against a different team's code.
-- **Q-learning ceiling**: because the state deliberately excludes the
-  opponent's cell (true partial observability), the tabular Q-table learns
-  positional priors rather than direct pursuit tactics — the cop's win rate
-  improves modestly but plateaus (quantified in the learning-curve figure).
-  This is a faithful consequence of the Dec-POMDP model, not a bug.
+- **Q-learning under co-adaptation**: the Bellman update genuinely runs every
+  turn during real games — the reward feedback loop (`agents/rewards.py`, fed
+  back through the `report_outcome` MCP tool) populates the Q-tables (most
+  entries become non-zero, shown in the notebook). Because *both* agents learn
+  simultaneously, the win rate stays balanced rather than climbing — the
+  expected multi-agent RL dynamic, not a bug. The learning ceiling is further
+  set by partial observability: the state deliberately excludes the opponent's
+  cell, so the table encodes positional priors, not direct pursuit tactics —
+  a faithful consequence of the Dec-POMDP model.

@@ -36,9 +36,28 @@ never proposes an illegal move.
   recommendation (§8): no training infrastructure needed, and the resulting
   table is small enough to reset/reinitialize per test run.
 
+## Reward feedback loop (learning during real games)
+
+Learning is wired into actual gameplay, not just unit tests. After each turn
+the orchestrator calls the agent's `report_outcome` MCP tool (in-process via
+`copthief.research.harness` for parameter studies; over MCP via
+`orchestrator/sub_game.py::_report_outcome` for real games) with a shaped
+per-step reward from `copthief.agents.rewards`:
+
+- Cop: `-1` per step (pushes for a fast capture), `+20` on capture.
+- Thief: `+1` per surviving step, `-20` when caught.
+
+Because both agents update their tables each turn, the tables genuinely
+populate over a run (verified in the notebook: most of the 25×5 entries become
+non-zero) and the two agents co-adapt.
+
 ## Success criteria and specific test scenarios
 
 - `tests/unit/agents/test_q_learning.py` verifies: Q-values increase toward
   the rewarded action after repeated updates on a fixed state; the agent
   never selects an action outside the provided legal-action list; and a
   terminal (`done=True`) update does not bootstrap from the next state.
+- `tests/unit/agents/test_rewards.py` verifies the reward signs per role.
+- `tests/unit/research/test_harness.py::test_qtables_actually_update_during_play`
+  proves the Q-tables move off zero during real gameplay (regression guard
+  against the learning loop silently not firing).
