@@ -1,0 +1,1017 @@
+{
+  "group_name": "SMNGRP05",
+  "students": [
+    "afaf gharra (208123232)"
+  ],
+  "github_repo": "https://github.com/afaf-gharra/marl-cop-thief",
+  "cop_mcp_url": "http://13.61.12.139:8801/mcp",
+  "thief_mcp_url": "http://13.61.12.139:8802/mcp",
+  "timezone": "Asia/Jerusalem",
+  "sub_games": [
+    {
+      "outcome": "thief_wins",
+      "cop_points": 5,
+      "thief_points": 10,
+      "num_turns": 25,
+      "transcript": [
+        {
+          "role": "thief",
+          "message": "Slipping away, heading down from [0, 3].",
+          "action": "down",
+          "position_after": [
+            1,
+            3
+          ],
+          "barrier_placed": null
+        },
+        {
+          "role": "cop",
+          "message": "Closing in from [4, 0], moving place_barrier.",
+          "action": "place_barrier",
+          "position_after": [
+            4,
+            0
+          ],
+          "barrier_placed": [
+            3,
+            0
+          ]
+        },
+        {
+          "role": "thief",
+          "message": "Slipping away, heading up from [1, 3].",
+          "action": "up",
+          "position_after": [
+            0,
+            3
+          ],
+          "barrier_placed": null
+        },
+        {
+          "role": "cop",
+          "message": "Closing in from [4, 0], moving right.",
+          "action": "right",
+          "position_after": [
+            4,
+            1
+          ],
+          "barrier_placed": null
+        },
+        {
+          "role": "thief",
+          "message": "Slipping away, heading down from [0, 3].",
+          "action": "down",
+          "position_after": [
+            1,
+            3
+          ],
+          "barrier_placed": null
+        },
+        {
+          "role": "cop",
+          "message": "I see barriers near me; advancing left to corner you.",
+          "action": "left",
+          "position_after": [
+            4,
+            0
+          ],
+          "barrier_placed": null
+        },
+        {
+          "role": "thief",
+          "message": "Slipping away, heading left from [1, 3].",
+          "action": "left",
+          "position_after": [
+            1,
+            2
+          ],
+          "barrier_placed": null
+        },
+        {
+          "role": "cop",
+          "message": "Distance is medium; I'm going right.",
+          "action": "right",
+          "position_after": [
+            4,
+            1
+          ],
+          "barrier_placed": null
+        },
+        {
+          "role": "thief",
+          "message": "Slipping away, heading up from [1, 2].",
+          "action": "up",
+          "position_after": [
+            0,
+            2
+          ],
+          "barrier_placed": null
+        },
+        {
+          "role": "cop",
+          "message": "Distance is medium; I'm going up.",
+          "action": "up",
+          "position_after": [
+            3,
+            1
+          ],
+          "barrier_placed": null
+        },
+        {
+          "role": "thief",
+          "message": "Staying evasive, moving down.",
+          "action": "down",
+          "position_after": [
+            1,
+            2
+          ],
+          "barrier_placed": null
+        },
+        {
+          "role": "cop",
+          "message": "I see barriers near me; advancing up to corner you.",
+          "action": "up",
+          "position_after": [
+            2,
+            1
+          ],
+          "barrier_placed": null
+        },
+        {
+          "role": "thief",
+          "message": "You're close; I'm breaking up to open ground.",
+          "action": "up",
+          "position_after": [
+            0,
+            2
+          ],
+          "barrier_placed": null
+        },
+        {
+          "role": "cop",
+          "message": "Closing in from [2, 1], moving up.",
+          "action": "up",
+          "position_after": [
+            1,
+            1
+          ],
+          "barrier_placed": null
+        },
+        {
+          "role": "thief",
+          "message": "Slipping away, heading down from [0, 2].",
+          "action": "down",
+          "position_after": [
+            1,
+            2
+          ],
+          "barrier_placed": null
+        },
+        {
+          "role": "cop",
+          "message": "I see barriers near me; advancing up to corner you.",
+          "action": "up",
+          "position_after": [
+            0,
+            1
+          ],
+          "barrier_placed": null
+        },
+        {
+          "role": "thief",
+          "message": "Staying evasive, moving up.",
+          "action": "up",
+          "position_after": [
+            0,
+            2
+          ],
+          "barrier_placed": null
+        },
+        {
+          "role": "cop",
+          "message": "Closing in from [0, 1], moving down.",
+          "action": "down",
+          "position_after": [
+            1,
+            1
+          ],
+          "barrier_placed": null
+        },
+        {
+          "role": "thief",
+          "message": "Slipping away, heading right from [0, 2].",
+          "action": "right",
+          "position_after": [
+            0,
+            3
+          ],
+          "barrier_placed": null
+        },
+        {
+          "role": "cop",
+          "message": "Closing in from [1, 1], moving up.",
+          "action": "up",
+          "position_after": [
+            0,
+            1
+          ],
+          "barrier_placed": null
+        },
+        {
+          "role": "thief",
+          "message": "Slipping away, heading down from [0, 3].",
+          "action": "down",
+          "position_after": [
+            1,
+            3
+          ],
+          "barrier_placed": null
+        },
+        {
+          "role": "cop",
+          "message": "Distance is close; I'm going down.",
+          "action": "down",
+          "position_after": [
+            1,
+            1
+          ],
+          "barrier_placed": null
+        },
+        {
+          "role": "thief",
+          "message": "You're close; I'm breaking up to open ground.",
+          "action": "up",
+          "position_after": [
+            0,
+            3
+          ],
+          "barrier_placed": null
+        },
+        {
+          "role": "cop",
+          "message": "Closing in from [1, 1], moving up.",
+          "action": "up",
+          "position_after": [
+            0,
+            1
+          ],
+          "barrier_placed": null
+        },
+        {
+          "role": "thief",
+          "message": "You're close; I'm breaking down to open ground.",
+          "action": "down",
+          "position_after": [
+            1,
+            3
+          ],
+          "barrier_placed": null
+        }
+      ]
+    },
+    {
+      "outcome": "cop_wins",
+      "cop_points": 20,
+      "thief_points": 5,
+      "num_turns": 7,
+      "transcript": [
+        {
+          "role": "thief",
+          "message": "Staying evasive, moving up.",
+          "action": "up",
+          "position_after": [
+            0,
+            3
+          ],
+          "barrier_placed": null
+        },
+        {
+          "role": "cop",
+          "message": "I see barriers near me; advancing up to corner you.",
+          "action": "up",
+          "position_after": [
+            3,
+            3
+          ],
+          "barrier_placed": null
+        },
+        {
+          "role": "thief",
+          "message": "Staying evasive, moving down.",
+          "action": "down",
+          "position_after": [
+            1,
+            3
+          ],
+          "barrier_placed": null
+        },
+        {
+          "role": "cop",
+          "message": "Closing in from [3, 3], moving up.",
+          "action": "up",
+          "position_after": [
+            2,
+            3
+          ],
+          "barrier_placed": null
+        },
+        {
+          "role": "thief",
+          "message": "Slipping away, heading up from [1, 3].",
+          "action": "up",
+          "position_after": [
+            0,
+            3
+          ],
+          "barrier_placed": null
+        },
+        {
+          "role": "cop",
+          "message": "Distance is close; I'm going up.",
+          "action": "up",
+          "position_after": [
+            1,
+            3
+          ],
+          "barrier_placed": null
+        },
+        {
+          "role": "thief",
+          "message": "You're adjacent; I'm breaking down to open ground.",
+          "action": "down",
+          "position_after": [
+            1,
+            3
+          ],
+          "barrier_placed": null
+        }
+      ]
+    },
+    {
+      "outcome": "thief_wins",
+      "cop_points": 5,
+      "thief_points": 10,
+      "num_turns": 25,
+      "transcript": [
+        {
+          "role": "thief",
+          "message": "Staying evasive, moving up.",
+          "action": "up",
+          "position_after": [
+            0,
+            3
+          ],
+          "barrier_placed": null
+        },
+        {
+          "role": "cop",
+          "message": "I see barriers near me; advancing left to corner you.",
+          "action": "left",
+          "position_after": [
+            1,
+            1
+          ],
+          "barrier_placed": null
+        },
+        {
+          "role": "thief",
+          "message": "Staying evasive, moving down.",
+          "action": "down",
+          "position_after": [
+            1,
+            3
+          ],
+          "barrier_placed": null
+        },
+        {
+          "role": "cop",
+          "message": "I see barriers near me; advancing up to corner you.",
+          "action": "up",
+          "position_after": [
+            0,
+            1
+          ],
+          "barrier_placed": null
+        },
+        {
+          "role": "thief",
+          "message": "Slipping away, heading up from [1, 3].",
+          "action": "up",
+          "position_after": [
+            0,
+            3
+          ],
+          "barrier_placed": null
+        },
+        {
+          "role": "cop",
+          "message": "Closing in from [0, 1], moving down.",
+          "action": "down",
+          "position_after": [
+            1,
+            1
+          ],
+          "barrier_placed": null
+        },
+        {
+          "role": "thief",
+          "message": "Staying evasive, moving down.",
+          "action": "down",
+          "position_after": [
+            1,
+            3
+          ],
+          "barrier_placed": null
+        },
+        {
+          "role": "cop",
+          "message": "Distance is close; I'm going down.",
+          "action": "down",
+          "position_after": [
+            2,
+            1
+          ],
+          "barrier_placed": null
+        },
+        {
+          "role": "thief",
+          "message": "Slipping away, heading up from [1, 3].",
+          "action": "up",
+          "position_after": [
+            0,
+            3
+          ],
+          "barrier_placed": null
+        },
+        {
+          "role": "cop",
+          "message": "Closing in from [2, 1], moving up.",
+          "action": "up",
+          "position_after": [
+            1,
+            1
+          ],
+          "barrier_placed": null
+        },
+        {
+          "role": "thief",
+          "message": "Staying evasive, moving down.",
+          "action": "down",
+          "position_after": [
+            1,
+            3
+          ],
+          "barrier_placed": null
+        },
+        {
+          "role": "cop",
+          "message": "I see barriers near me; advancing up to corner you.",
+          "action": "up",
+          "position_after": [
+            0,
+            1
+          ],
+          "barrier_placed": null
+        },
+        {
+          "role": "thief",
+          "message": "You're close; I'm breaking right to open ground.",
+          "action": "right",
+          "position_after": [
+            1,
+            4
+          ],
+          "barrier_placed": null
+        },
+        {
+          "role": "cop",
+          "message": "Closing in from [0, 1], moving down.",
+          "action": "down",
+          "position_after": [
+            1,
+            1
+          ],
+          "barrier_placed": null
+        },
+        {
+          "role": "thief",
+          "message": "Staying evasive, moving up.",
+          "action": "up",
+          "position_after": [
+            0,
+            4
+          ],
+          "barrier_placed": null
+        },
+        {
+          "role": "cop",
+          "message": "I see barriers near me; advancing up to corner you.",
+          "action": "up",
+          "position_after": [
+            0,
+            1
+          ],
+          "barrier_placed": null
+        },
+        {
+          "role": "thief",
+          "message": "You're close; I'm breaking down to open ground.",
+          "action": "down",
+          "position_after": [
+            1,
+            4
+          ],
+          "barrier_placed": null
+        },
+        {
+          "role": "cop",
+          "message": "Distance is medium; I'm going down.",
+          "action": "down",
+          "position_after": [
+            1,
+            1
+          ],
+          "barrier_placed": null
+        },
+        {
+          "role": "thief",
+          "message": "You're close; I'm breaking up to open ground.",
+          "action": "up",
+          "position_after": [
+            0,
+            4
+          ],
+          "barrier_placed": null
+        },
+        {
+          "role": "cop",
+          "message": "Closing in from [1, 1], moving up.",
+          "action": "up",
+          "position_after": [
+            0,
+            1
+          ],
+          "barrier_placed": null
+        },
+        {
+          "role": "thief",
+          "message": "Staying evasive, moving down.",
+          "action": "down",
+          "position_after": [
+            1,
+            4
+          ],
+          "barrier_placed": null
+        },
+        {
+          "role": "cop",
+          "message": "Distance is medium; I'm going down.",
+          "action": "down",
+          "position_after": [
+            1,
+            1
+          ],
+          "barrier_placed": null
+        },
+        {
+          "role": "thief",
+          "message": "You're close; I'm breaking up to open ground.",
+          "action": "up",
+          "position_after": [
+            0,
+            4
+          ],
+          "barrier_placed": null
+        },
+        {
+          "role": "cop",
+          "message": "Distance is medium; I'm going down.",
+          "action": "down",
+          "position_after": [
+            2,
+            1
+          ],
+          "barrier_placed": null
+        },
+        {
+          "role": "thief",
+          "message": "Staying evasive, moving down.",
+          "action": "down",
+          "position_after": [
+            1,
+            4
+          ],
+          "barrier_placed": null
+        }
+      ]
+    },
+    {
+      "outcome": "cop_wins",
+      "cop_points": 20,
+      "thief_points": 5,
+      "num_turns": 6,
+      "transcript": [
+        {
+          "role": "thief",
+          "message": "Staying evasive, moving up.",
+          "action": "up",
+          "position_after": [
+            3,
+            4
+          ],
+          "barrier_placed": null
+        },
+        {
+          "role": "cop",
+          "message": "Distance is close; I'm going down.",
+          "action": "down",
+          "position_after": [
+            1,
+            4
+          ],
+          "barrier_placed": null
+        },
+        {
+          "role": "thief",
+          "message": "Staying evasive, moving up.",
+          "action": "up",
+          "position_after": [
+            2,
+            4
+          ],
+          "barrier_placed": null
+        },
+        {
+          "role": "cop",
+          "message": "Closing in from [1, 4], moving up.",
+          "action": "up",
+          "position_after": [
+            0,
+            4
+          ],
+          "barrier_placed": null
+        },
+        {
+          "role": "thief",
+          "message": "Staying evasive, moving up.",
+          "action": "up",
+          "position_after": [
+            1,
+            4
+          ],
+          "barrier_placed": null
+        },
+        {
+          "role": "cop",
+          "message": "I see barriers near me; advancing down to corner you.",
+          "action": "down",
+          "position_after": [
+            1,
+            4
+          ],
+          "barrier_placed": null
+        }
+      ]
+    },
+    {
+      "outcome": "cop_wins",
+      "cop_points": 20,
+      "thief_points": 5,
+      "num_turns": 7,
+      "transcript": [
+        {
+          "role": "thief",
+          "message": "Slipping away, heading right from [4, 2].",
+          "action": "right",
+          "position_after": [
+            4,
+            3
+          ],
+          "barrier_placed": null
+        },
+        {
+          "role": "cop",
+          "message": "Closing in from [0, 3], moving down.",
+          "action": "down",
+          "position_after": [
+            1,
+            3
+          ],
+          "barrier_placed": null
+        },
+        {
+          "role": "thief",
+          "message": "Staying evasive, moving up.",
+          "action": "up",
+          "position_after": [
+            3,
+            3
+          ],
+          "barrier_placed": null
+        },
+        {
+          "role": "cop",
+          "message": "I see barriers near me; advancing up to corner you.",
+          "action": "up",
+          "position_after": [
+            0,
+            3
+          ],
+          "barrier_placed": null
+        },
+        {
+          "role": "thief",
+          "message": "Slipping away, heading up from [3, 3].",
+          "action": "up",
+          "position_after": [
+            2,
+            3
+          ],
+          "barrier_placed": null
+        },
+        {
+          "role": "cop",
+          "message": "Closing in from [0, 3], moving down.",
+          "action": "down",
+          "position_after": [
+            1,
+            3
+          ],
+          "barrier_placed": null
+        },
+        {
+          "role": "thief",
+          "message": "Staying evasive, moving up.",
+          "action": "up",
+          "position_after": [
+            1,
+            3
+          ],
+          "barrier_placed": null
+        }
+      ]
+    },
+    {
+      "outcome": "thief_wins",
+      "cop_points": 5,
+      "thief_points": 10,
+      "num_turns": 25,
+      "transcript": [
+        {
+          "role": "thief",
+          "message": "Slipping away, heading up from [3, 2].",
+          "action": "up",
+          "position_after": [
+            2,
+            2
+          ],
+          "barrier_placed": null
+        },
+        {
+          "role": "cop",
+          "message": "Closing in from [4, 3], moving up.",
+          "action": "up",
+          "position_after": [
+            3,
+            3
+          ],
+          "barrier_placed": null
+        },
+        {
+          "role": "thief",
+          "message": "You're close; I'm breaking up to open ground.",
+          "action": "up",
+          "position_after": [
+            1,
+            2
+          ],
+          "barrier_placed": null
+        },
+        {
+          "role": "cop",
+          "message": "Closing in from [3, 3], moving up.",
+          "action": "up",
+          "position_after": [
+            2,
+            3
+          ],
+          "barrier_placed": null
+        },
+        {
+          "role": "thief",
+          "message": "Staying evasive, moving left.",
+          "action": "left",
+          "position_after": [
+            1,
+            1
+          ],
+          "barrier_placed": null
+        },
+        {
+          "role": "cop",
+          "message": "Distance is close; I'm going up.",
+          "action": "up",
+          "position_after": [
+            1,
+            3
+          ],
+          "barrier_placed": null
+        },
+        {
+          "role": "thief",
+          "message": "Slipping away, heading up from [1, 1].",
+          "action": "up",
+          "position_after": [
+            0,
+            1
+          ],
+          "barrier_placed": null
+        },
+        {
+          "role": "cop",
+          "message": "Closing in from [1, 3], moving up.",
+          "action": "up",
+          "position_after": [
+            0,
+            3
+          ],
+          "barrier_placed": null
+        },
+        {
+          "role": "thief",
+          "message": "You're close; I'm breaking down to open ground.",
+          "action": "down",
+          "position_after": [
+            1,
+            1
+          ],
+          "barrier_placed": null
+        },
+        {
+          "role": "cop",
+          "message": "Distance is close; I'm going down.",
+          "action": "down",
+          "position_after": [
+            1,
+            3
+          ],
+          "barrier_placed": null
+        },
+        {
+          "role": "thief",
+          "message": "Slipping away, heading up from [1, 1].",
+          "action": "up",
+          "position_after": [
+            0,
+            1
+          ],
+          "barrier_placed": null
+        },
+        {
+          "role": "cop",
+          "message": "I see barriers near me; advancing up to corner you.",
+          "action": "up",
+          "position_after": [
+            0,
+            3
+          ],
+          "barrier_placed": null
+        },
+        {
+          "role": "thief",
+          "message": "Staying evasive, moving down.",
+          "action": "down",
+          "position_after": [
+            1,
+            1
+          ],
+          "barrier_placed": null
+        },
+        {
+          "role": "cop",
+          "message": "I see barriers near me; advancing down to corner you.",
+          "action": "down",
+          "position_after": [
+            1,
+            3
+          ],
+          "barrier_placed": null
+        },
+        {
+          "role": "thief",
+          "message": "Slipping away, heading up from [1, 1].",
+          "action": "up",
+          "position_after": [
+            0,
+            1
+          ],
+          "barrier_placed": null
+        },
+        {
+          "role": "cop",
+          "message": "Closing in from [1, 3], moving up.",
+          "action": "up",
+          "position_after": [
+            0,
+            3
+          ],
+          "barrier_placed": null
+        },
+        {
+          "role": "thief",
+          "message": "Slipping away, heading down from [0, 1].",
+          "action": "down",
+          "position_after": [
+            1,
+            1
+          ],
+          "barrier_placed": null
+        },
+        {
+          "role": "cop",
+          "message": "Closing in from [0, 3], moving down.",
+          "action": "down",
+          "position_after": [
+            1,
+            3
+          ],
+          "barrier_placed": null
+        },
+        {
+          "role": "thief",
+          "message": "Slipping away, heading up from [1, 1].",
+          "action": "up",
+          "position_after": [
+            0,
+            1
+          ],
+          "barrier_placed": null
+        },
+        {
+          "role": "cop",
+          "message": "Distance is close; I'm going up.",
+          "action": "up",
+          "position_after": [
+            0,
+            3
+          ],
+          "barrier_placed": null
+        },
+        {
+          "role": "thief",
+          "message": "You're close; I'm breaking down to open ground.",
+          "action": "down",
+          "position_after": [
+            1,
+            1
+          ],
+          "barrier_placed": null
+        },
+        {
+          "role": "cop",
+          "message": "Distance is close; I'm going down.",
+          "action": "down",
+          "position_after": [
+            1,
+            3
+          ],
+          "barrier_placed": null
+        },
+        {
+          "role": "thief",
+          "message": "Slipping away, heading up from [1, 1].",
+          "action": "up",
+          "position_after": [
+            0,
+            1
+          ],
+          "barrier_placed": null
+        },
+        {
+          "role": "cop",
+          "message": "Distance is close; I'm going up.",
+          "action": "up",
+          "position_after": [
+            0,
+            3
+          ],
+          "barrier_placed": null
+        },
+        {
+          "role": "thief",
+          "message": "Staying evasive, moving down.",
+          "action": "down",
+          "position_after": [
+            1,
+            1
+          ],
+          "barrier_placed": null
+        }
+      ]
+    }
+  ],
+  "totals": {
+    "cop": 75,
+    "thief": 45
+  }
+}

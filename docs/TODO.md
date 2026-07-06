@@ -36,22 +36,24 @@
 
 ## Phase 7 — Quality gates (done)
 - [x] Unit tests per module + graduated sanity checks (2x2 → 5x5).
-- [x] `uv run pytest --cov` — 52 tests, 93% coverage (≥85% gate passed).
-- [x] `uv run ruff check .` — zero violations.
+- [x] `uv run pytest --cov` — 68 tests, 92% coverage (≥85% gate passed).
+- [x] `uv run ruff check .` — zero violations; all files ≤150 lines.
 - [x] Pushed to `https://github.com/afaf-gharra/marl-cop-thief` (public).
-- [x] Drafted (not sent) the `game_report.json` submission email — see
-      `results/draft_email.eml`, built by
-      `copthief.reporting.draft_email` without touching the Gmail API.
 
-## Phase 8 — Deliberately not executed (explicit student decision)
-- [ ] Real cloud deployment of both MCP servers. Valid AWS credentials were
-      available in the build environment (verified with
-      `aws sts get-caller-identity`), so this was technically possible, but
-      the student chose to keep it documented-only (`docs/PLAN.md`) rather
-      than create real, billable, public-facing AWS resources.
-- [ ] Real Gmail OAuth consent + actually sending `results/draft_email.eml`
-      via `gmail_sender.send_report(...)`. This requires the student to
-      create their own Google Cloud OAuth client and approve a one-time
-      device-code consent; the student chose to keep the email as a
-      reviewable draft instead.
-- [ ] Bonus inter-group race, if a partner team is found.
+## Phase 8 — Real integrations (executed)
+- [x] **Real LLM dialogue**: full 6-game series through OpenAI `gpt-4o-mini`
+      (`assets/llm_run_log.txt`, cost ~$0.006/series in the notebook).
+- [x] **Real cloud deployment**: both MCP servers on AWS EC2 with Bearer-token
+      auth + a locked-down security group; a 6-game series played over the
+      public internet; resources torn down in the same session. Evidence:
+      `assets/cloud_run_log.txt`, `assets/cloud_auth_proof.txt`,
+      `assets/demo_cloud_game_report.json`; record in `docs/PLAN.md`.
+- [x] **Research notebook** with executed outputs + figures (`assets/*.png`).
+- [ ] **Gmail send** — OAuth consent completed by the account owner, then
+      `uv run python -m copthief.reporting.send_report` emails the cloud-run
+      report to `rmisegal+uoh26b@gmail.com` (final manual step).
+
+## Out of scope
+- [ ] Bonus inter-group race — needs a partner team; schema + builder ready
+      (`build_bonus_game_report`), no live cross-group match played.
+- [ ] Moodle submission PDF (`SMNGRP05-ex06.pdf`) — no Word template available.

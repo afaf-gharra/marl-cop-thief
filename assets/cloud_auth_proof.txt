@@ -1,0 +1,24 @@
+=== Cloud MCP auth proof (AWS EC2 13.61.12.139) ===
+
+$ curl -i http://13.61.12.139:8801/mcp   # cop server, NO token
+HTTP/1.1 401 Unauthorized
+date: Mon, 06 Jul 2026 07:26:04 GMT
+server: uvicorn
+content-type: application/json
+content-length: 301
+www-authenticate: Bearer error="invalid_token", error_description="Authentication failed. The provided bearer token is invalid, expired, or no longer recognized by the server. To resolve: clear authentication tokens in your MCP client and reconnect. Your client should automatically re-register and obtain new tokens."
+
+{"error": "invalid_token", "error_description": "Authentication failed. The provided bearer token is invalid, expired, or no longer recognized by the server. To resolve: clear authentication tokens in your MCP client and reconnect. Your client should automatically re-register and obtain new tokens."}
+$ curl -i http://13.61.12.139:8802/mcp   # thief server, NO token
+HTTP/1.1 401 Unauthorized
+date: Mon, 06 Jul 2026 07:26:04 GMT
+server: uvicorn
+content-type: application/json
+content-length: 301
+www-authenticate: Bearer error="invalid_token", error_description="Authentication failed. The provided bearer token is invalid, expired, or no longer recognized by the server. To resolve: clear authentication tokens in your MCP client and reconnect. Your client should automatically re-register and obtain new tokens."
+
+=== Teardown (same session) ===
+instance i-06cd8d491f8560d97 -> terminated
+security group sg-0a5272109e9e934e5 (copthief-mcp-sg) -> deleted
+Verified via: aws ec2 describe-instances -> State.Name == "terminated"
+Deployment region: eu-north-1, account 079983261111

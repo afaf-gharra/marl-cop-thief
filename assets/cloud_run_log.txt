@@ -1,0 +1,121 @@
+--- Sub-game 1: thief_wins ---
+[thief] -> [1, 3] (down): Slipping away, heading down from [0, 3].
+[  cop] -> [4, 0] (place_barrier): Closing in from [4, 0], moving place_barrier.
+[thief] -> [0, 3] (up): Slipping away, heading up from [1, 3].
+[  cop] -> [4, 1] (right): Closing in from [4, 0], moving right.
+[thief] -> [1, 3] (down): Slipping away, heading down from [0, 3].
+[  cop] -> [4, 0] (left): I see barriers near me; advancing left to corner you.
+[thief] -> [1, 2] (left): Slipping away, heading left from [1, 3].
+[  cop] -> [4, 1] (right): Distance is medium; I'm going right.
+[thief] -> [0, 2] (up): Slipping away, heading up from [1, 2].
+[  cop] -> [3, 1] (up): Distance is medium; I'm going up.
+[thief] -> [1, 2] (down): Staying evasive, moving down.
+[  cop] -> [2, 1] (up): I see barriers near me; advancing up to corner you.
+[thief] -> [0, 2] (up): You're close; I'm breaking up to open ground.
+[  cop] -> [1, 1] (up): Closing in from [2, 1], moving up.
+[thief] -> [1, 2] (down): Slipping away, heading down from [0, 2].
+[  cop] -> [0, 1] (up): I see barriers near me; advancing up to corner you.
+[thief] -> [0, 2] (up): Staying evasive, moving up.
+[  cop] -> [1, 1] (down): Closing in from [0, 1], moving down.
+[thief] -> [0, 3] (right): Slipping away, heading right from [0, 2].
+[  cop] -> [0, 1] (up): Closing in from [1, 1], moving up.
+[thief] -> [1, 3] (down): Slipping away, heading down from [0, 3].
+[  cop] -> [1, 1] (down): Distance is close; I'm going down.
+[thief] -> [0, 3] (up): You're close; I'm breaking up to open ground.
+[  cop] -> [0, 1] (up): Closing in from [1, 1], moving up.
+[thief] -> [1, 3] (down): You're close; I'm breaking down to open ground.
+Score -> cop: 5, thief: 10
+  (animated playback: results\sub_game_1.gif)
+
+--- Sub-game 2: cop_wins ---
+[thief] -> [0, 3] (up): Staying evasive, moving up.
+[  cop] -> [3, 3] (up): I see barriers near me; advancing up to corner you.
+[thief] -> [1, 3] (down): Staying evasive, moving down.
+[  cop] -> [2, 3] (up): Closing in from [3, 3], moving up.
+[thief] -> [0, 3] (up): Slipping away, heading up from [1, 3].
+[  cop] -> [1, 3] (up): Distance is close; I'm going up.
+[thief] -> [1, 3] (down): You're adjacent; I'm breaking down to open ground.
+Score -> cop: 20, thief: 5
+  (animated playback: results\sub_game_2.gif)
+
+--- Sub-game 3: thief_wins ---
+[thief] -> [0, 3] (up): Staying evasive, moving up.
+[  cop] -> [1, 1] (left): I see barriers near me; advancing left to corner you.
+[thief] -> [1, 3] (down): Staying evasive, moving down.
+[  cop] -> [0, 1] (up): I see barriers near me; advancing up to corner you.
+[thief] -> [0, 3] (up): Slipping away, heading up from [1, 3].
+[  cop] -> [1, 1] (down): Closing in from [0, 1], moving down.
+[thief] -> [1, 3] (down): Staying evasive, moving down.
+[  cop] -> [2, 1] (down): Distance is close; I'm going down.
+[thief] -> [0, 3] (up): Slipping away, heading up from [1, 3].
+[  cop] -> [1, 1] (up): Closing in from [2, 1], moving up.
+[thief] -> [1, 3] (down): Staying evasive, moving down.
+[  cop] -> [0, 1] (up): I see barriers near me; advancing up to corner you.
+[thief] -> [1, 4] (right): You're close; I'm breaking right to open ground.
+[  cop] -> [1, 1] (down): Closing in from [0, 1], moving down.
+[thief] -> [0, 4] (up): Staying evasive, moving up.
+[  cop] -> [0, 1] (up): I see barriers near me; advancing up to corner you.
+[thief] -> [1, 4] (down): You're close; I'm breaking down to open ground.
+[  cop] -> [1, 1] (down): Distance is medium; I'm going down.
+[thief] -> [0, 4] (up): You're close; I'm breaking up to open ground.
+[  cop] -> [0, 1] (up): Closing in from [1, 1], moving up.
+[thief] -> [1, 4] (down): Staying evasive, moving down.
+[  cop] -> [1, 1] (down): Distance is medium; I'm going down.
+[thief] -> [0, 4] (up): You're close; I'm breaking up to open ground.
+[  cop] -> [2, 1] (down): Distance is medium; I'm going down.
+[thief] -> [1, 4] (down): Staying evasive, moving down.
+Score -> cop: 5, thief: 10
+  (animated playback: results\sub_game_3.gif)
+
+--- Sub-game 4: cop_wins ---
+[thief] -> [3, 4] (up): Staying evasive, moving up.
+[  cop] -> [1, 4] (down): Distance is close; I'm going down.
+[thief] -> [2, 4] (up): Staying evasive, moving up.
+[  cop] -> [0, 4] (up): Closing in from [1, 4], moving up.
+[thief] -> [1, 4] (up): Staying evasive, moving up.
+[  cop] -> [1, 4] (down): I see barriers near me; advancing down to corner you.
+Score -> cop: 20, thief: 5
+  (animated playback: results\sub_game_4.gif)
+
+--- Sub-game 5: cop_wins ---
+[thief] -> [4, 3] (right): Slipping away, heading right from [4, 2].
+[  cop] -> [1, 3] (down): Closing in from [0, 3], moving down.
+[thief] -> [3, 3] (up): Staying evasive, moving up.
+[  cop] -> [0, 3] (up): I see barriers near me; advancing up to corner you.
+[thief] -> [2, 3] (up): Slipping away, heading up from [3, 3].
+[  cop] -> [1, 3] (down): Closing in from [0, 3], moving down.
+[thief] -> [1, 3] (up): Staying evasive, moving up.
+Score -> cop: 20, thief: 5
+  (animated playback: results\sub_game_5.gif)
+
+--- Sub-game 6: thief_wins ---
+[thief] -> [2, 2] (up): Slipping away, heading up from [3, 2].
+[  cop] -> [3, 3] (up): Closing in from [4, 3], moving up.
+[thief] -> [1, 2] (up): You're close; I'm breaking up to open ground.
+[  cop] -> [2, 3] (up): Closing in from [3, 3], moving up.
+[thief] -> [1, 1] (left): Staying evasive, moving left.
+[  cop] -> [1, 3] (up): Distance is close; I'm going up.
+[thief] -> [0, 1] (up): Slipping away, heading up from [1, 1].
+[  cop] -> [0, 3] (up): Closing in from [1, 3], moving up.
+[thief] -> [1, 1] (down): You're close; I'm breaking down to open ground.
+[  cop] -> [1, 3] (down): Distance is close; I'm going down.
+[thief] -> [0, 1] (up): Slipping away, heading up from [1, 1].
+[  cop] -> [0, 3] (up): I see barriers near me; advancing up to corner you.
+[thief] -> [1, 1] (down): Staying evasive, moving down.
+[  cop] -> [1, 3] (down): I see barriers near me; advancing down to corner you.
+[thief] -> [0, 1] (up): Slipping away, heading up from [1, 1].
+[  cop] -> [0, 3] (up): Closing in from [1, 3], moving up.
+[thief] -> [1, 1] (down): Slipping away, heading down from [0, 1].
+[  cop] -> [1, 3] (down): Closing in from [0, 3], moving down.
+[thief] -> [0, 1] (up): Slipping away, heading up from [1, 1].
+[  cop] -> [0, 3] (up): Distance is close; I'm going up.
+[thief] -> [1, 1] (down): You're close; I'm breaking down to open ground.
+[  cop] -> [1, 3] (down): Distance is close; I'm going down.
+[thief] -> [0, 1] (up): Slipping away, heading up from [1, 1].
+[  cop] -> [0, 3] (up): Distance is close; I'm going up.
+[thief] -> [1, 1] (down): Staying evasive, moving down.
+Score -> cop: 5, thief: 10
+  (animated playback: results\sub_game_6.gif)
+
+TOTALS -> cop: 75, thief: 45
+Wrote results/game_report.json, results/final_positions.png, and per-game GIFs
