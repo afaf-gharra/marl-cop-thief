@@ -21,6 +21,7 @@ results/*.json
 results/*.png
 results/*.eml
 results/*.gif
+results/*.txt
 
 .vscode/
 .idea/

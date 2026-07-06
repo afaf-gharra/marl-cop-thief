@@ -10,6 +10,11 @@
     "cop_loss": 5,
     "thief_loss": 5
   },
+  "q_learning": {
+    "learning_rate": 0.1,
+    "discount_factor": 0.9,
+    "epsilon": 0.2
+  },
   "group_name": "SMNGRP05",
   "timezone": "Asia/Jerusalem",
   "report_recipient": "rmisegal+uoh26b@gmail.com"

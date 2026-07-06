@@ -58,6 +58,38 @@ shared/                -> config.py, constants.py, gatekeeper.py, version.py
   space and prompt flavor text — subclassing would duplicate the `decide()`
   Template Method per the anti-duplication rule in the submission
   guidelines.
+- **ADR-4: OpenAI `gpt-4o-mini` as the default LLM provider (spec Access-1).**
+  Rationale: the exercise recommends the "simple public cloud API" access
+  pattern as the fastest/cheapest; `LlmClient` auto-detects `OPENAI_API_KEY`
+  (else `ANTHROPIC_API_KEY`, else offline templates). A full 6-game series
+  costs <$0.01, so cost is not a constraint. Trade-off: depends on an
+  external API at play time — mitigated by the deterministic offline fallback
+  that keeps tests and grading fully reproducible without any key.
+- **ADR-5: Cloud MCP servers use Bearer-token auth and run key-less.**
+  Rationale: the spec mandates token-based auth before exposing MCP servers
+  publicly. We use FastMCP's `StaticTokenVerifier` (server) + `BearerAuth`
+  (client), gated on `MCP_AUTH_TOKEN`. The EC2 security group additionally
+  restricts inbound to TCP 8801–8802 only. The OpenAI key is **not** uploaded
+  to the VM — cloud agents run in offline-fallback mode — so a compromised
+  instance leaks no paid credential. Trade-off vs. an HTTPS tunnel (ngrok):
+  raw HTTP over a locked-down security group is simpler and needs no third
+  party, at the cost of no transport encryption (acceptable for a short-lived
+  demo carrying no secrets).
+
+## Deployment record (AWS, executed and torn down)
+
+- **Region/account**: `eu-north-1`, account `079983261111`.
+- **Resources**: EC2 `t3.micro` (AMI `ami-0831da36a6aaa667a`, Amazon Linux
+  2023), security group `copthief-mcp-sg` (`sg-0a5272109e9e934e5`) inbound
+  TCP 8801–8802 from `0.0.0.0/0` only.
+- **Bootstrap**: user-data installs `git`+`uv`, clones the public repo, runs
+  both servers with `MCP_HOST=0.0.0.0` and a random `MCP_AUTH_TOKEN`.
+- **Proof**: full 6-game series played from the local orchestrator over the
+  public IP (`assets/cloud_run_log.txt`); `curl` without token → HTTP 401
+  (`assets/cloud_auth_proof.txt`); report with cloud URLs
+  (`assets/demo_cloud_game_report.json`).
+- **Teardown**: instance terminated and security group deleted in the same
+  session (verified via `describe-instances`).
 
 ## API / data contracts
 

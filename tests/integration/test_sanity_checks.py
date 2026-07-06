@@ -7,7 +7,7 @@ from fastmcp import Client
 
 from copthief.mcp_servers.factory import build_agent_server
 from copthief.orchestrator.game_series import run_game_series
-from copthief.shared.config import GameConfig, ScoringConfig
+from copthief.shared.config import GameConfig, QLearningConfig, ScoringConfig
 from copthief.shared.constants import Outcome, Role
 
 
@@ -19,6 +19,7 @@ def _config(grid_size: tuple[int, int], max_moves: int, num_games: int = 2) -> G
         num_games=num_games,
         max_barriers=2,
         scoring=ScoringConfig(cop_win=20, thief_win=10, cop_loss=5, thief_loss=5),
+        q_learning=QLearningConfig(learning_rate=0.1, discount_factor=0.9, epsilon=0.2),
         group_name="SMNGRP05",
         timezone="Asia/Jerusalem",
         report_recipient="",
@@ -36,6 +37,7 @@ def _config(grid_size: tuple[int, int], max_moves: int, num_games: int = 2) -> G
 )
 async def test_graduated_sanity_check(grid_size, max_moves, monkeypatch):
     monkeypatch.delenv("ANTHROPIC_API_KEY", raising=False)
+    monkeypatch.delenv("OPENAI_API_KEY", raising=False)
     config = _config(grid_size, max_moves)
     cop_server = build_agent_server(Role.COP)
     thief_server = build_agent_server(Role.THIEF)

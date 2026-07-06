@@ -4,6 +4,8 @@ import os
 from dataclasses import dataclass
 from pathlib import Path
 
+from dotenv import load_dotenv
+
 from copthief.shared.constants import DEFAULT_CONFIG_PATH, DEFAULT_RATE_LIMIT_PATH
 from copthief.shared.version import assert_config_version_compatible
 
@@ -17,6 +19,13 @@ class ScoringConfig:
 
 
 @dataclass(frozen=True)
+class QLearningConfig:
+    learning_rate: float
+    discount_factor: float
+    epsilon: float
+
+
+@dataclass(frozen=True)
 class GameConfig:
     version: str
     grid_size: tuple[int, int]
@@ -24,6 +33,7 @@ class GameConfig:
     num_games: int
     max_barriers: int
     scoring: ScoringConfig
+    q_learning: QLearningConfig
     group_name: str
     timezone: str
     report_recipient: str
@@ -37,6 +47,10 @@ def _find_repo_root(start: Path) -> Path:
     return start
 
 
+# Load .env once at import so get_env() sees keys without callers exporting them manually.
+load_dotenv(_find_repo_root(Path(__file__)) / ".env")
+
+
 def load_game_config(path: str | None = None) -> GameConfig:
     """Load and validate config/config.json."""
     repo_root = _find_repo_root(Path(__file__))
@@ -48,6 +62,7 @@ def load_game_config(path: str | None = None) -> GameConfig:
 
     grid = raw["grid_size"]
     scoring = raw["scoring"]
+    q_learning = raw.get("q_learning", {})
     return GameConfig(
         version=raw["version"],
         grid_size=(grid[0], grid[1]),
@@ -59,6 +74,11 @@ def load_game_config(path: str | None = None) -> GameConfig:
             thief_win=scoring["thief_win"],
             cop_loss=scoring["cop_loss"],
             thief_loss=scoring["thief_loss"],
+        ),
+        q_learning=QLearningConfig(
+            learning_rate=q_learning.get("learning_rate", 0.1),
+            discount_factor=q_learning.get("discount_factor", 0.9),
+            epsilon=q_learning.get("epsilon", 0.2),
         ),
         group_name=raw.get("group_name", "UNKNOWN"),
         timezone=raw.get("timezone", "UTC"),

@@ -48,6 +48,38 @@ def build_internal_game_report(
     }
 
 
+def build_bonus_game_report(
+    group_1: str,
+    group_2: str,
+    repos: dict[str, str],
+    mcp_urls: dict[str, str],
+    students: dict[str, list[str]],
+    sub_games: list[dict],
+    totals_by_group: dict[str, int],
+    bonus_claim: dict[str, int],
+    mutual_agreement: bool,
+    timezone: str = "Asia/Jerusalem",
+) -> dict:
+    """Assemble the inter-group bonus report matching the spec's §9.2 schema."""
+    return {
+        "report_type": "bonus_game",
+        "groups": {"group_1": group_1, "group_2": group_2},
+        "github_repo_group_1": repos["group_1"],
+        "github_repo_group_2": repos["group_2"],
+        "mcp_url_group_1_cop": mcp_urls["group_1_cop"],
+        "mcp_url_group_1_thief": mcp_urls["group_1_thief"],
+        "mcp_url_group_2_cop": mcp_urls["group_2_cop"],
+        "mcp_url_group_2_thief": mcp_urls["group_2_thief"],
+        "timezone": timezone,
+        "students_group_1": students["group_1"],
+        "students_group_2": students["group_2"],
+        "sub_games": sub_games,
+        "totals_by_group": totals_by_group,
+        "bonus_claim": bonus_claim,
+        "mutual_agreement": mutual_agreement,
+    }
+
+
 def write_report(report: dict, path: str) -> None:
     """Persist the report as pretty-printed JSON, creating parent directories if needed."""
     output_path = Path(path)
