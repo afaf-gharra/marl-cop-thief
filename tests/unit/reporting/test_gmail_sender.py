@@ -26,3 +26,32 @@ def test_send_report_calls_service_when_mocked():
 
     assert result == {"id": "1"}
     fake_service.users.return_value.messages.return_value.send.assert_called_once()
+
+
+def test_build_service_uses_cached_valid_token(tmp_path, monkeypatch):
+    """Exercise the OAuth path with a mocked google stack and a valid cached token."""
+    creds_file = tmp_path / "credentials.json"
+    creds_file.write_text("{}", encoding="utf-8")
+    token_file = tmp_path / "token.json"
+    token_file.write_text("{}", encoding="utf-8")
+    monkeypatch.setenv("GMAIL_CREDENTIALS_PATH", str(creds_file))
+    monkeypatch.setenv("GMAIL_TOKEN_PATH", str(token_file))
+
+    valid_creds = MagicMock(valid=True)
+    google = MagicMock()
+    google.oauth2.credentials.Credentials.from_authorized_user_file.return_value = valid_creds
+    modules = {
+        "google": google,
+        "google.auth": google.auth,
+        "google.auth.transport": google.auth.transport,
+        "google.auth.transport.requests": google.auth.transport.requests,
+        "google.oauth2": google.oauth2,
+        "google.oauth2.credentials": google.oauth2.credentials,
+        "google_auth_oauthlib": MagicMock(),
+        "google_auth_oauthlib.flow": MagicMock(),
+        "googleapiclient": MagicMock(),
+        "googleapiclient.discovery": MagicMock(build=MagicMock(return_value="service")),
+    }
+    with patch.dict("sys.modules", modules):
+        service = GmailSender(ApiGatekeeper(_CONFIG))._build_service()
+    assert service is not None

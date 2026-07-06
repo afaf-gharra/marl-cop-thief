@@ -211,9 +211,10 @@ lines, write/extend tests before changing behavior (TDD), and update
 
 ## Credits and license
 
-MIT license (see `pyproject.toml`). Built with
-[FastMCP](https://gofastmcp.com), [Anthropic Claude](https://www.anthropic.com),
-NumPy, and Matplotlib. Course: bonus exercise ex06, Dr. Yoram Segal.
+MIT license — see [`LICENSE`](LICENSE). Built with
+[FastMCP](https://gofastmcp.com), [OpenAI](https://platform.openai.com) /
+[Anthropic Claude](https://www.anthropic.com), NumPy, and Matplotlib.
+Course: exercise ex06, Dr. Yoram Segal.
 
 ## Cloud deployment (executed on AWS)
 
