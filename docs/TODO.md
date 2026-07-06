@@ -51,8 +51,9 @@
 - [x] **Research notebook** with executed outputs + figures (`assets/*.png`).
 - [x] **Gmail send** — OAuth consent completed; the cloud-run report was
       emailed to `rmisegal+uoh26b@gmail.com` via the Gmail API
-      (`uv run python -m copthief.reporting.send_report`, message id
-      `19f36657f46ff3b8`). Body is the JSON report only, per spec.
+      (`uv run python -m copthief.reporting.send_report`). Body is the JSON
+      report only, per spec. Message id `19f36657f46ff3b8`; a corrected
+      copy listing both group members was re-sent as `19f367b99e422d4f`.
 
 ## Out of scope
 - [ ] Bonus inter-group race — needs a partner team; schema + builder ready
