@@ -2,7 +2,7 @@
 
 ## Overview and context
 
-Course bonus exercise ex06 ("Dual AI Agent Conversation via MCP Servers").
+Course exercise ex06 ("Dual AI Agent Conversation via MCP Servers").
 The pedagogical goal (per the exercise spec) is not the win/loss result of
 the game, but demonstrating that two fully autonomous AI agents can
 coordinate complex, time-critical decisions over an unstructured natural
@@ -50,9 +50,8 @@ MCP/Q-learning pattern.
 
 ## Assumptions, dependencies, limitations
 
-- Two-student group (SMNGRP05); no partner *group* was paired for the
-  inter-group bonus match — schema supported, not exercised.
-- Depends on `fastmcp`, `numpy`, `matplotlib`, `anthropic`,
+- Two-student group (SMNGRP05).
+- Depends on `fastmcp`, `numpy`, `matplotlib`, `openai`, `anthropic`,
   `google-api-python-client` (see `pyproject.toml`).
 - Limitation: cloud deployment and Gmail sending are implemented and
   documented but not executed live (see README "Known limitations").

@@ -2,7 +2,7 @@
 
 [![CI](https://github.com/afaf-gharra/marl-cop-thief/actions/workflows/ci.yml/badge.svg)](https://github.com/afaf-gharra/marl-cop-thief/actions/workflows/ci.yml)
 
-Ex06 (bonus), team code **SMNGRP05** — Afaf Gharra (ID 208123232) &
+Ex06, team code **SMNGRP05** — Afaf Gharra (ID 208123232) &
 Reem Awawdy (ID 212018899).
 
 Two independent AI agents — a **Cop** and a **Thief** — hunt/evade each other
@@ -237,14 +237,6 @@ group deleted) — see the deployment record in `docs/PLAN.md`.
 
 ## Known limitations (honest self-assessment)
 
-- **Inter-group bonus race** (§12 of the exercise) needs a *second group's*
-  MCP URLs, which weren't available (no partner team paired with us). The
-  full bonus pipeline is implemented and exercised as a **self-play
-  demonstration** (`uv run python -m copthief.reporting.bonus_demo` → the
-  3+3 role split, producing a spec-compliant §9.2 `bonus_game` report at
-  [`assets/demo_bonus_game_report.json`](assets/demo_bonus_game_report.json)).
-  This proves the code path end-to-end; it is honestly a self-play run, not a
-  genuine cross-group match against a different team's code.
 - **Q-learning under co-adaptation**: the Bellman update genuinely runs every
   turn during real games — the reward feedback loop (`agents/rewards.py`, fed
   back through the `report_outcome` MCP tool) populates the Q-tables (most

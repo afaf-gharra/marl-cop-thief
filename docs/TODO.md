@@ -58,12 +58,7 @@
 ## Phase 9 — Final polish
 - [x] **CI/CD** — GitHub Actions (`.github/workflows/ci.yml`) runs ruff +
       pytest/coverage on every push (badge in README).
-- [x] **Inter-group bonus pipeline** exercised as a self-play demonstration
-      (`copthief.reporting.bonus_demo`) producing a §9.2 `bonus_game` report
-      (`assets/demo_bonus_game_report.json`) + unit test.
+- [x] MIT `LICENSE` file; higher coverage on the reporting + game-loop modules.
 
 ## Out of scope
-- [ ] Bonus inter-group race against a *real* second team — none paired with
-      us; the pipeline is proven via self-play (above), not a genuine
-      cross-group match.
 - [ ] Moodle submission PDF (`SMNGRP05-ex06.pdf`) — handled by the students.
